@@ -110,6 +110,16 @@ nl-to-sql/
 ollama.model=codellama
 ```
 
+---
+
+## How it works (concise)
+
+- **MCP tooling:** the MCP server exposes tools such as `list_tables` and `execute_query` used to fetch schema and run read-only SELECTs. See `mcp-server/src/index.js`.
+- **Flow:** `QueryService` fetches the database schema via `McpClientService`, asks the LLM to generate SQL, then executes the returned SQL. See `backend/src/main/java/com/nl2sql/service/QueryService.java` and `backend/src/main/java/com/nl2sql/service/McpClientService.java`.
+- **Generation:** `OllamaService` builds a prompt that includes the schema and returns the model-produced SQL (extracted from a ```sql``` code block). See `backend/src/main/java/com/nl2sql/service/OllamaService.java`.
+
+- **RAG note:** this is schema-augmented, tool-assisted prompting — not full RAG (no embeddings/vector store or document retrieval).
+
 **Custom database** — set env var before starting the MCP server:
 ```bash
 DATABASE_URL=postgresql://user:pass@host:5432/mydb node src/index.js
