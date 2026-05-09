@@ -1,0 +1,10 @@
+# Ignore node_modules directory
+node_modules/
+
+.next
+
+# Ignore package manager lockfiles if specified by repo conventions
+package-lock.json
+
+# Optional: Add specific files inside `src` or sensitive configurations
+.env

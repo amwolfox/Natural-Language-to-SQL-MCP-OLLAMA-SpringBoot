@@ -1,0 +1,23 @@
+# Flow Diagram
+
+    User Request (Natural Language Query)
+                    ↓
+    Frontend (Next.js) → Chat UI · query input · results table
+                    |
+                    | (HTTP/REST)
+                    ↓
+    Backend Spring Server → Prompt builder · response parser · API router
+                    |
+                    | (Ollama API)
+                    ↓
+    Ollama LLM (qwen2.5-coder) → SQL generation · schema-aware reasoning
+                    |
+                    | (MCP protocol)
+                    ↓
+    MCP PostgreSQL Server → Schema introspection · query execution tool
+                    |
+                    | (JDBC / SQL)
+                    ↓
+    PostgreSQL Database → Your data · schema · tables
+
+---

@@ -1,0 +1,13 @@
+
+> nl2sql-frontend@1.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 28.5s
+ ○ Compiling / ...
+ ✓ Compiled / in 1706ms (460 modules)
+ GET / 200 in 1924ms
+[?25h
