@@ -19,6 +19,9 @@ Browser → Next.js (3000) → Spring Boot (8080) → Ollama qwen2.5-coder (1143
 | PostgreSQL | 16+ | https://www.postgresql.org |
 
 ---
+## Screenshot
+
+![img.png](img.png)
 
 ## Setup
 
